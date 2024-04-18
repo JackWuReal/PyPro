@@ -1,1 +1,1 @@
-Good Good Study Day Day up
+***Study Hard***
