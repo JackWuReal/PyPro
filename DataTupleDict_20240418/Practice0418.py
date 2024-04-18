@@ -109,32 +109,6 @@ print(list1)
 # print(Tuple1)
 list2 = list()
 
-# print(len(list1))
-# n = 2
-# while n < len(list1):
-#     if n % 2 == 0:
-#         list2.append(list1[n])
-#     n += 1
-# print(list2)
-# list1[0] = list2
-# print(list1)
-
-# nums = [10, 20, 30, 40, 50]
-#
-# for i in range(len(nums)):  # 下标
-#     print(nums[i])
-#     nums[i] += 10
-#
-# print(nums)
-#
-# i = 0
-# while i < len(nums):
-#     print(nums[i])
-#     nums[i] += 10
-#     i += 1
-# print(nums)
-
-
 data_list = [
     {'desc': '用户名密码验证码 OK',
      'username': '13888888888',
@@ -157,13 +131,11 @@ data_list = [
 ]
 
 new_list = []
-print(type(data_list))
-
 for data in data_list:  # data  字典
     print(f"用户名:{data.get('username')}, 密码: {data.get('password')}, "
           f"验证码: {data.get('verify_code')}, 期望结果:{data.get('expect')}")
 
-    t = data.get('username'), data.get('password'), data.get('verify_code'), data.get('expect')
+    t = data.get('username'), data.get('password'), data.get('verify_code'), data.get('expect')  #元组
     new_list.append(t)
 print(new_list)
 
