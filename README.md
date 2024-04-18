@@ -1,2 +1,1 @@
-Good Good Study 
-Day Day up
+Good Good Study Day Day up
