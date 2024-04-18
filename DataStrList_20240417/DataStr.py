@@ -68,8 +68,8 @@ str1 = 'hello Python\tand itcast and\nitheima'
 # print(list3)
 
 # 字符串的连接 join
-# list1= ["9999","hello","world","+","."]    列表必须全为字符串格式
-# str2 = '    '.join(list1)
+# list1= ["9999","hello","world","+","."] 列表必须全为字符串格式
+# str2 = ','.join(list1)
 # print(str2)
 # str3 = '_+_'.join(list1)
 # print(str3)
