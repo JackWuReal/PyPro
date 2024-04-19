@@ -93,4 +93,72 @@ def login():
         print('Login failed')
 
 
-login()   # 调用login()函数
+# login()   # 调用login()函数
+
+"""
+模块和包
+as 关键字可以给模块或功能起名
+模块导入
+方法一
+import 模块名    #模块名为代码文件名
+
+使用其功能 模块名.功能名    功能可以是变量，函数，类
+#多用于导入系统中常用的模块和功能
+"""
+
+# import random
+#
+# num = random.randint(1, 100)
+# print(num)
+
+"""
+方式二 导入指定的功能
+
+from 模块名 import 功能名
+功能名()    #使用
+
+方式二 多用与导入自己书写的或第三方模块
+"""
+
+# from random import randint
+# print(randint(1,19))
+
+"""
+定义⼀个模块 tools.py , 在模块中定义⼀个函数
+sum_2_num(), 可以对两个数字求和
+2. 新定义⼀个代码⽂件, 调⽤ tools.py ⽂件中的
+sum_2_num() 函数, 对 10 和 20 求和
+"""
+# from tools import sum_2_num
+# print(sum_2_num(10,20))
+
+from DataDefFunc_20240419.PythonPackage import tools
+sum =  tools.sum_2_num(10, 20)
+print(sum)
+
+"""
+_name_  变量
+导入模块的时候会执行模块中的代码
+如果在导入的模块中不想执行某些代码可以使用 _name_ 来解决
+
+3, __name__ 变量,是 Python 解释器内置的变量(变量的值是
+⾃动维护的), 每个代码⽂件中,都有这个变量
+3.1 在模块中 直接右键运⾏代码⽂件, __name__ 变量的值是
+'__main__'
+3.2 如果是被导⼊运⾏代码⽂件, __name__ 变量的值 是 模块
+名(⽂件名)
+
+if __name__ == '__main__':
+ # 在这个 if 的缩进中书写的代码,导⼊的时候不会被执⾏
+"""
+
+"""
+模块的导入顺序
+1, 在导⼊模块的时候, 会先从代码所在的⽬录进⾏导⼊
+2, 如果没有找到,回去 Python 系统的⽬录查找导⼊
+3, 如果没有找到, 报错
+--------
+注意点: 我们⾃⼰定义的代码⽂件名字 不要和你导⼊的系统的模
+块⽂件名⼀样
+"""
+# import app
