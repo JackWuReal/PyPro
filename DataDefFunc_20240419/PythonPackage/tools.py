@@ -1,5 +1,3 @@
-
-
 def sum_2_num(a,b):
 
     if '_name_' == '_main_':

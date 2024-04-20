@@ -47,9 +47,10 @@ def hello_world():
 参
 """
 
-def sun_2_num(a, b): # a, b 形参
-     c = a + b
-     print(f'a + b ={c}')
+
+def sun_2_num(a, b):  # a, b 形参
+    c = a + b
+    print(f'a + b ={c}')
 
 
 # sun_2_num(10, 20) # 10, 20 实参 10 给 a, 20 给 b
@@ -73,7 +74,7 @@ def sun_2_num(a, b): # a, b 形参
 """
 
 
-def get_max(a,b):
+def get_max(a, b):
     if a >= b:
         return a
     else:

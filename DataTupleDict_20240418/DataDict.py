@@ -41,7 +41,7 @@ print(dirct2)
 # 遍历字典的键和值  字典.item()
 my_dict = {'name': '小明', 'age': 18, 'sex': '男'}
 for m,n in my_dict.items():
-    print(m,n)
+    print(m, n)
 print("***"*30)
 for m in my_dict.keys():
     print(m)

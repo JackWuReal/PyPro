@@ -53,8 +53,8 @@ while循环
 ...100
 
 """
-n=1
-num=0
+n = 1
+num = 0
 # while n <= 100:
 #     num = num +n
 #     n+=1

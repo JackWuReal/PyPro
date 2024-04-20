@@ -16,8 +16,8 @@ print(type("hello"))
 print(type(int(19)))
 print(type(float(19)))
 print(type(str(19)))
-print(type(tuple([8,9,6.3])))
-print(type(list([1,2,3])))
+print(type(tuple([8, 9, 6.3])))
+print(type(list([1, 2, 3])))
 name = "吴阁揆"
 age = 18
 #格式化输出字符串format（） 调用字符串的format方法可以实现字符串的格式化
@@ -63,6 +63,6 @@ d //= c  #d除以c 取商赋给d
 # print(f'd={d}')
 print(f'年龄: {age},姓名: {name}')
 
-print(f'{name}是否已成年:{age>=18}')
+print(f'{name}是否已成年:{age >= 18}')
 
 

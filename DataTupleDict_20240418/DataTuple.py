@@ -28,10 +28,10 @@
 """
 a = 90
 b = 20
-print(a,b)
-c = a,b
-d = b,a
-a,b = b,a
-print(a,b)
+print(a, b)
+c = a, b
+d = b, a
+a, b = b, a
+print(a, b)
 # print(type(a), type(b))
 # print(type(c),d)

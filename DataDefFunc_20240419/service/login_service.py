@@ -1,4 +1,3 @@
-
 def login(username, password,code):
     if code == '8888':
         print('验证码正确')

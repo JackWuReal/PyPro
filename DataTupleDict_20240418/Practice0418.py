@@ -76,7 +76,7 @@ str1 = "hello world and itcast and itheima and Python"
 已有列表nums = [10, 20, 30, 40, 50], 将每一个数字在原来的基础上加10，打印列表
 """
 nums = [10, 20, 30, 40, 50]
-for num in range(0,5):
+for num in range(0, 5):
     nums[num] += 10
 print(nums)
 
@@ -135,7 +135,7 @@ for data in data_list:  # data  字典
     print(f"用户名:{data.get('username')}, 密码: {data.get('password')}, "
           f"验证码: {data.get('verify_code')}, 期望结果:{data.get('expect')}")
 
-    t = data.get('username'), data.get('password'), data.get('verify_code'), data.get('expect')  #元组
+    t = data.get('username'), data.get('password'), data.get('verify_code'), data.get('expect')  # 元组
     new_list.append(t)
 print(new_list)
 

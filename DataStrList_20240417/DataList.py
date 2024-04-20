@@ -14,7 +14,7 @@ List 列表 顺序结构
 # print(type(list2),list2)
 
 list3 = []
-list4 = [1,2,3,'hello',False,8,'hello']
+list4 = [1, 2, 3, 'hello', False, 8, 'hello']
 # print(list4, type(list4))
 """
 列表的切片 得到是 新的列表.
@@ -40,8 +40,8 @@ list4 = [1,2,3,'hello',False,8,'hello']
 直接在原列表中添加数据, 不会生成新的列表,如果想要查看添加后的数据, 直接 print() 打印原列表
 
 """
-print(list4.append(999),list4)
-print(list4.append(911),list4)
+print(list4.append(999), list4)
+print(list4.append(911), list4)
 
 # 删除数据 pop()
 # print(list4.pop(0)) #删除序号为0的数据
@@ -65,14 +65,14 @@ print(list4.append(911),list4)
 # list5.sort(reverse=True) #从大到小
 # print(list5)
 # 列表的嵌套  列表中的数据都是列表
-list_student = [[1,'李','男'],[3,'王','女'],[5,'吴','男']]
+list_student = [[1, '李', '男'], [3, '王', '女'], [5, '吴', '男']]
 print(list_student[0][1])
 list_student[0].append('帅')
 print(list_student)
 list_student[0].pop()
 print(list_student)
 # 打印所有人的年龄
-for info in list_student:  #info 为列表
+for info in list_student:  # info 为列表
     print(info[0])
 
 
