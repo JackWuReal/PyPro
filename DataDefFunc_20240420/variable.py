@@ -68,9 +68,91 @@ def func2():
 而是 模块名
 """
 
-if __name__ == '__main__':   # 该代码常用来执行模块测试，不影响其他模块代码执行
-    print(__name__)
-    func2()
+# if __name__ == '__main__':   # 该代码常用来执行模块测试，不影响其他模块代码执行
+#     print(__name__)
+#     func2()
+#     func1()
+#     func2()
+
+"""
+全局变量
+1, 在函数外部定义的变量
+2, 特点
+- 2.1 全局变量 可以在任意函数内访问(读取)
+- 2.2 想要在函数内部修改全局变量的引用,需要使用 global 关键字声明(使用 global 关键字可以声明为全局变
+量)
+- 2.3 如果在函数内部出现和全局变量名字相同的局部变量,在函数内部使用的是局部变量
+3, 生命周期
+- 代码执行的时候 创建, 执行结束销毁
+
+"""
+# 定义全局变量
+# g_num = 10
+#
+#
+# def func_1():
+#     print(g_num)
+#
+#
+# def func_2():
+#     g_num = 20
+#     print(g_num)
+#
+#
+# def func_3():
+#     global g_num
+#     g_num = 30
+#     print(g_num)
+
+
+# if __name__ == '__main__':
+#     print(g_num) # 10
+#     func_1() # 10
+#     func_2() # 20
+#     func_1() # 10
+#     print(g_num) # 10
+#     func_3() # 30 修改了全局变量, 将全局变量的值改为30 了
+#     func_1() # 30
+#     g_num = 100
+#     func_1() # 100 修改全局变量的值
+#     func_2() # 20 局部变量
+#     func_3() # 30
+#     func_1() # 30
+
+
+def func1():
+    list1.append(10)
+
+
+def func2():
+    list1 = [1, 1]  # 定义局部变量, 不影响全局变量
+    list1.append(0)
+
+
+def func3():
+    global list1 # 全局变量
+    list1.pop() # 删除最后一个数据
+
+
+def func_5():
+    list1.pop() # 用的全局变量,没有改引用
+
+
+def func4():
+    global list1 # 全局变量
+    list1 = [1]
+
+
+if __name__ == '__main__':
+    list1 = [1, 2,3]
     func1()
+    print(list1)
     func2()
+    print(list1)
+    func3()
+    print(list1)
+    func_5()
+    print(list1)
+    func4()
+    print(list1)
 
