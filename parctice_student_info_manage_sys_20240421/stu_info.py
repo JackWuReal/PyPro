@@ -6,7 +6,6 @@
 用字典来存储的单个学生
 用列表来存储多个学生信息
 """
-
 list = []
 # show_info 函数展示学生信息
 
@@ -15,6 +14,7 @@ def show_info():
     code = input("please input the number you want\n1.添加学生\n2.删除学生\n3.修改学生信息"
                  "\n4.查询单个学生信息\n5.查询所有学生信息\n6.退出系统")
     return int(code)
+
 
 def add_stu():
     name = input('请输入学生名字')
@@ -33,7 +33,6 @@ def modify_stu(name):
     if dict_name != False:
         new_age = input("请输入新的年龄")
         dict_name.__setitem__('age', new_age)
-
 
 
 def find_stu_by_name(name):
@@ -56,6 +55,7 @@ def delete_stu_by_name(name):
             print(f'删除{name}用户成功')
             return i
     print(f'未找到{name}的学生')
+
 
 def run():
     while True:
