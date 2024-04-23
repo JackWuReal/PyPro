@@ -8,17 +8,17 @@
 2. 在这个文件中 获取项目的目录,在其他代码中使用 路径拼接完成绝对路径的书写
 
 """
-import os.path
+import os
 
 """
 获取当前文件的绝对路径
 """
 
-abspath = os.path.abspath(__file__)  # 获取当前文件的绝对路径
-print(abspath)
+# abspath = os.path.abspath(__file__)  # 获取当前文件的绝对路径
+# print(abspath)
+#
+# dirname = os.path.dirname(abspath)
+# print(dirname)
 
-dirname = os.path.dirname(abspath)
-print(dirname)
 
-def base_dir():
-    return os.path.dirname(__file__)
+Base_Dir = os.path.dirname(__file__)
