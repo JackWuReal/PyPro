@@ -5,7 +5,7 @@ from Test_Unittest_20240423.Unittest_Practice.data.read_data import read_data_me
 from Test_Unittest_20240423.Unittest_Practice.tools import login
 
 
-class AddDataTest(unittest.TestCase):
+class TestAddData(unittest.TestCase):
     @parameterized.expand(read_data_method())
     def test_add_data(self,desc,username,password,expect):
         self.assertEqual(expect,login(username,password))
