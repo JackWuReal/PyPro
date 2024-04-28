@@ -78,36 +78,36 @@ resp_v = requests.get(url="http://192.168.42.129/index.php?m=Home&c=User&a=verif
 # # 从 获取验证码 的响应结果，提取 cookie
 my_cookie = resp_v.cookies
 #
-# print(f"mycookie:{my_cookie}")
+print(f"mycookie*************:{my_cookie}")
 # # 发送 登录请求 url、请求头、请求体。 携带 cookie。 得响应结果
-# resp = requests.post(url="http://192.168.42.129/index.php?m=Home&c=User&a=do_login&t=0.7094195931397276",
-#                     headers={"Content-Type": "application/x-www-form-urlencoded"},
-#                     data={"username": "13800138006", "password": "123456", "verify_code":"8899"},cookies=my_cookie)
-# # 打印响应结果
-# print(resp.json())
-# # 发送 查看我的订单 请求
-# resp_o = requests.get(url="http://192.168.42.129/Home/Order/order_list.html",cookies=my_cookie)
-# print(resp_o.text)
+resp = requests.post(url="http://192.168.42.129/index.php?m=Home&c=User&a=do_login",
+                    headers={"Content-Type": "application/x-www-form-urlencoded"},
+                    data={"username": "13012345678", "password": "123456", "verify_code":"8888"},cookies=my_cookie)
+# 打印响应结果
+print(resp.json())
+# 发送 查看我的订单 请求
+resp_o = requests.get(url="http://192.168.42.129/Home/Order/order_list.html",cookies=my_cookie)
+print(resp_o.text)
 
 
 # 1. 创建一个 Session 实例。
-session = requests.Session()
-
-# 2. 使用 Session 实例，调 get方法，发送 获取验证码请求。（不需要获取cookie）
-resp_v = session.get(url="http://192.168.42.129/index.php?m=Home&c=User&a=verify&r=0.21519623710645064")
-print(resp_v)
-
-# # 3. 使用 同一个 Session 实例，调用 post方法，发送 登录请求。(不需要携带 cookie)
-resp = session.post(url="http://192.168.42.129/index.php?m=Home&c=User&a=do_login&t=0.7094195931397276",
-                    data={"username": "13012345678", "password": "12345678", "verify_code":'8888'})
-print(resp.json())
-
-# # 4. 使用 同一个 Session 实例，调用 get 方法，发送 查看我的订单请求。(不需要携带 cookie)
-resp_o = session.get(url="http://192.168.42.129/Home/Order/order_list.html")
-# print(resp_o.text)
-print(resp_o.headers)
-print(resp_o.cookies)
-print(resp_v.url)
+# session = requests.Session()
+#
+# # 2. 使用 Session 实例，调 get方法，发送 获取验证码请求。（不需要获取cookie）
+# resp_v = session.get(url="http://192.168.42.129/index.php?m=Home&c=User&a=verify&r=0.21519623710645064")
+# print(resp_v)
+#
+# # # 3. 使用 同一个 Session 实例，调用 post方法，发送 登录请求。(不需要携带 cookie)
+# resp = session.post(url="http://192.168.42.129/index.php?m=Home&c=User&a=do_login&t=0.7094195931397276",
+#                     data={"username": "13012345678", "password": "12345678", "verify_code":'8888'})
+# print(resp.json())
+#
+# # # 4. 使用 同一个 Session 实例，调用 get 方法，发送 查看我的订单请求。(不需要携带 cookie)
+# resp_o = session.get(url="http://192.168.42.129/Home/Order/order_list.html")
+# # print(resp_o.text)
+# print(resp_o.headers)
+# print(resp_o.cookies)
+# print(resp_v.url)
 
 
 
