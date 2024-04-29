@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<envelope>
+    <header>
+        <security>usernametoken</security>
+        <username>admin</username>
+        <password>dXbIPoNM6WIkfQo7uvWrfQ==</password>
+        <nc>Ac6CZrsZmBv1i9CjZxdzZu4DUEkNnjCI</nc>
+    </header>
+    <body>
+        <command>get.system.login</command>
+        <content>88888</content>
+    </body>
+</envelope>
