@@ -19,12 +19,9 @@
 ### link text 定位
 * 说明： 根据链接⽂本(a标签)定位
 * ⽅法： driver.find_element(By.LINK_TEXT,"链接⽂本")
-* ://rutracker.in/https://rutracker.in/
+
 * 特点： 传⼊的链接⽂本，必须全部匹配，不能模糊
 ### partial_link_test 定位
 * 说明： 根据链接⽂本(a标签)定位
 * ⽅法： driver.find_element(By.PARTIAL_LINK_TEXT,"链接⽂本")
 * 特点： 传⼊的链接⽂本，⽀持模糊匹配（传⼊局部⽂字）
-### 扩展查找一组元素
-* 说明：返回列表格式，要使⽤需要添加下标或遍历。
-* 提示： ⼋⼤元素定位⽅法，都可以使⽤⼀组元素定位,如果没有搜索到符合标签，返回空列表
