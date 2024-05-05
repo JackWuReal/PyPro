@@ -1,0 +1,4 @@
+name:jack
+address:sh
+age:18
+sex:man
