@@ -98,7 +98,7 @@
      * 进程id会通过ps命令查看
      * -9是强制关闭
 5. **查看系统监听端口：** netstat [-anptu] | grep 关键字
-   * 查看3306端口是否打开：`netstat -anptu | grep 3306`
+   * 查看3306 端口是否打开：`netstat -anptu | grep 3306`
    * 查看http服务是否打开：`netstat -anptu | grep http`
    * 查看TCP协议端口是否打开：`netstat -anpt`
 6. **查看日志信息：tail**
