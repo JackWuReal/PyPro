@@ -22,8 +22,74 @@ sorted_array = bubble_sort(array)
 * 其他排序算法
 
 ## python基础定义
+* 缺省参数与多值参数的区别
+  * 缺省参数：定义函数时给某个函数一个默认值,具有默认值的参数
+    * 调用函数时,**若没有传入缺省参数的值则使用默认值**
+    * 将常见的值设置为参数的缺省值,从而**简化函数的调用**
+    * 必须保证缺省参数在参数列表末尾
+    * 在调用函数时,多个缺省参数需要指定参数名,以方便解释器知道参数的对应关系
+```python
+def print_info(name,gender='男生'):
+  print(f'{name} is {gender}')
+```
+```python
+def print_info(name,title="",gender="男生"):
+    print(f'{title} {name} is {gender}')
+print_info("小明")
+print_info("老王",title="班长")# 需要指定参数名
+print_info("小美",gender="女生")# 若不指定缺省参数的值则采用默认值
+```
+  * 多值参数：如果一个函数能处理的参数个数不确定,可以考虑多值参数
+    * *args用于接收元组类型数据,args为习惯命名,可自定义
+```python
+def demo(num,*args):
+    print(num)
+    print(args)
 
+demo(1,2,3,4,5)
+```
+  * 元组的拆包方式：在元组变量前,增加一个*
+```python
+# 元组拆包
+def sum_numbers(*args):
+    num = 0
+    for n in args:
+        num += n
+    return num
+# 将一个元组变量传递给函数对应的参数
+nums = (1,2,3)
+result = sum_numbers(*nums)
+```
+* 匿名函数：没有函数名称且能接受任何数量的参数,只能返回一个表达式的值
+```python
+sum = lambda arg1,arg2:arg1+arg2
+sum(1,2)
+sum(9,10)
+```
 * python构造方法是什么
+* 什么是装饰器及应用场景并手写装饰器
+  * 装饰器的本质是闭包、主要作用是在不该百年被装饰函数的原有功能的基础上，增加额外的功能
+  * 应用场景：插入日志，性能测试，事务处理
+  * https://zhuanlan.zhihu.com/p/53666925
+```python
+import time
+# 计算函数执行时间的装饰器
+def timer(func):
+
+  def deco(*args, **kwargs):
+    start_time = time.time()
+    func(*args, **kwargs)
+    stop_time = time.time()
+    print("running time is %s " % (stop_time - start_time))
+    return deco
+
+@timer
+def test1():
+  time.sleep(3)
+print("in the test 1")
+
+test1()
+```
 * python的可变数据类型和不可变数据类型有哪些
   * 可变数据类型和不可变数据类型：看修改赋值时是否开辟新的内存空间
   * 可：list set dirt
@@ -157,6 +223,13 @@ class Demo:
 
 * 如果给你两个等长的列表怎么把他整合为一个字典
 * python的一些方法怎么用例如pop()
+  * pop()会直接修改原始对象并返回被删除的元素
+    * 列表pop()方法使用时不传入索引值默认**删除并返回**列表最后一个数据
+    * `del_data = list_name.pop(index)`删除并返回指定索引对应的数据
+    * 异常：IndexError
+  * 字典pop()方法
+    * `del_value = dirt_name.pop(key)`**删除并返回**key对应的value
+    * 异常：keyError
 * 有用过魔术方法吗怎么使用的：以两个下划线开头和结束的方法，满足某个条件会自动调用
   * `__slots__`
   * `__init__`
@@ -172,7 +245,7 @@ blue_cat = Cat('蓝宝')
 black_cat = Cat('黑宝')
 ```
   * `__str__`
-    * 自定义打印对象变量的信息可以使用__str__方法、默认情况下会答应对象的内存地址
+    * 自定义打印对象变量的信息可以使用__str__方法、默认情况下会打印对象的内存地址
     * 该方法必须返回一个字符串数据
 
 ## python实现自动化
