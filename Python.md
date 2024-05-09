@@ -4,7 +4,7 @@
 
 ## 基础算法
 
-* 口述冒泡排序
+1. 口述冒泡排序
 ```python
 def bubble_sort(arr):
     n = len(arr)
@@ -20,9 +20,49 @@ sorted_array = bubble_sort(array)
 ```
 
 * 其他排序算法
+2. 用python代码实现选择排序算法
+```python
+def sort(arr):
+    for j in range(len(arr)-1):
+        minIndex = j
+        for i in range(j+1,len(arr),1):
+            if(arr[i] < arr[minIndex]):
+                minIndex = i
+        arr[j],arr[minIndex] = arr[minIndex],arr[j]
+```
 
+3. 用python代码实现斐波那契数列
+```python
+def fib_test(n):
+    if n == 0 or n == 1:
+        return n
+    return fib_test(n - 1) + fib_test(n - 2)
+```
+4. 用python代码实现单例模式
+```python
+def singleton(cls):
+    _instance = {}
+    def inner():
+        if cls not in _instance:
+            _instance[cls] = cls()
+        return _instance[cls]
+    return inner
+
+@singleton
+class Cls(object):
+    def __init__(self):
+        pass
+```
+5. 用代码判断一个数字是否为回文数
+```python
+def is_palindrome(num):
+    n = list(str(num))
+    tmp = int("".join(n[::-1])) # 反转
+    return num == tmp
+```
 ## python基础定义
-* 缺省参数与多值参数的区别
+
+1. 缺省参数与多值参数的区别
   * 缺省参数：定义函数时给某个函数一个默认值,具有默认值的参数
     * 调用函数时,**若没有传入缺省参数的值则使用默认值**
     * 将常见的值设置为参数的缺省值,从而**简化函数的调用**
@@ -39,6 +79,7 @@ print_info("小明")
 print_info("老王",title="班长")# 需要指定参数名
 print_info("小美",gender="女生")# 若不指定缺省参数的值则采用默认值
 ```
+2. python中为什么使用*args,**kwargs?
   * 多值参数：如果一个函数能处理的参数个数不确定,可以考虑多值参数
     * *args用于接收元组类型数据,args为习惯命名,可自定义
 ```python
@@ -60,14 +101,13 @@ def sum_numbers(*args):
 nums = (1,2,3)
 result = sum_numbers(*nums)
 ```
-* 匿名函数：没有函数名称且能接受任何数量的参数,只能返回一个表达式的值
+3. 匿名函数：没有函数名称且能接受任何数量的参数,只能返回一个表达式的值
 ```python
 sum = lambda arg1,arg2:arg1+arg2
 sum(1,2)
 sum(9,10)
 ```
-* python构造方法是什么
-* 什么是装饰器及应用场景并手写装饰器
+4. 什么是装饰器及应用场景并手写装饰器
   * 装饰器的本质是闭包、主要作用是在不该百年被装饰函数的原有功能的基础上，增加额外的功能
   * 应用场景：插入日志，性能测试，事务处理
   * https://zhuanlan.zhihu.com/p/53666925
@@ -90,21 +130,20 @@ print("in the test 1")
 
 test1()
 ```
-* python的可变数据类型和不可变数据类型有哪些
+5. python的可变数据类型和不可变数据类型有哪些
   * 可变数据类型和不可变数据类型：看修改赋值时是否开辟新的内存空间
   * 可：list set dirt
   * 不可：tuple str int float
-* list set dirt tuple四者的区别
+6. list set dirt tuple四者的区别
   * list set tuple：list有序列表（可变）
   * tuple有序集合（不可变）
   * set无序不重复序列（可变）
   * dirt 字典：kv键值对，键必须唯一、键必须是不可变数据类型：字符串，数字，元组 值可以是任意数据类型
-* python的三层架构
-* python的数据存储方式
-* self参数和cls参数
+7. python的数据存储方式
+8. self参数和cls参数
   * self参数：由哪个对象调用的方法,方法内的self就是哪个对象的引用
   * 在类封装的方法中可以通过,self.访问对象的属性和方法
-* python类静态类和动态类
+9. python类静态类和动态类
   * 动态类：普通类默认动态类、可以在运行时动态添加新属性和方法的类
   * 静态类：使用slots 不允许动态添加新属性和方法的类
 ```python
@@ -120,7 +159,7 @@ static_instance = StaticClass('value1', 'value2')
 # static_instance.new_attribute = 'value3'  
 # 这会抛出AttributeError，因为'new_attribute'没有在__slots__中定义
 ```
-* 封装继承多态的定义
+10. 封装继承多态的定义
     * 封装:将属性和方法封装到一个抽象类中的过程
       * 外界使用类创建对象通过对象调用方法、对象方法的细节都被封装在类的内部
     * 继承：可以考虑将想同逻辑的代码抽取封装到父类中，再通过继承关系直接实现子类对象并调用父类中的方法使用
@@ -130,14 +169,14 @@ static_instance = StaticClass('value1', 'value2')
     * 方法重写：
       * 扩展重写
       * 覆盖重写
-* 实例属性 实例方法
+11. 实例属性 实例方法
 ```python
 class Car:
-    # 实例属性
+    # 实例方法
     def __init__(self, brand):
-        self.brand = brand
+        self.brand = brand #brand为实例属性
 ```
-* 各种属性 **类属性、类方法**
+12. 各种属性 **类属性、类方法**
   * **类属性**:就是给类对象中定义的属性，用来记录和这个类相关的特征，不会用来记录具体对象的特征
   * 调用方式:类名.类属性名  <u>类属性被该类的所有对象共享</u>：可以通过*实例.类属性名*来直接调用和修改
   * **类方法**：简化方法调用步骤(可以直接通过'类名.方法名'调用) 也可以通过*实例.类方法*名直接调用
@@ -149,6 +188,7 @@ class Demo:
     def le_method(cls):
         pass
 ```
+
 ```python
 class Tool(object):
     #定义类属性count 用来记录创建工具对象的总数
@@ -184,7 +224,7 @@ class DriverUtil:
 if __name__ == '__main__':
     DriverUtil.get_driver()  # 调用获取驱动对象方法
 ```
-* 各种属性：**私有属性私有方法**
+13. 各种属性：**私有属性私有方法**
   * 当属性和方法只需要在类定义内部使用时,就可以使用私有属性和私有方法
   * **在类定义外部**、无论是实例对象和类对象均无法均无法获取私有属性和调用私有方法
   * `私有属性 __属性名  私有方法 __方法名()`
@@ -207,7 +247,7 @@ xiaofang = Women("dmm")
 # 私有方法，外部无法直接调用
 #xiaofang.__secret()
 ```
-* 各种方法的定义 **静态方法**
+14. 各种方法的定义 **静态方法**
   * 类中封装一个方法，这个方法既不需要访问实例属性或调用实例方法、也不需要访问类属性或调用类方法、可以将这个方法封装为一个静态方法
   * 用修饰器`@staticmethod`
   * 通过类名.调用静态方法
@@ -218,11 +258,46 @@ class Demo:
     def sta_method():
         pass
 ```
-
+***
 ## 基础应用
+15. python代码实现I love China 输出 China love I
+```python
+def resverse(str_list, start, end):
+  while start < end:
+    str_list[start], str_list[end] = str_list[end], str_list[start]
+    start = start + 1
+    end = end - 1
 
-* 如果给你两个等长的列表怎么把他整合为一个字典
-* python的一些方法怎么用例如pop()
+setence = 'I love China'
+str_list = list(setence)
+i = 0
+while i < len(str_list):
+  if str_list[i] != ' ':
+    start = i
+    end = start + 1
+    while (end < len(str_list)) and (str_list[end] != ' '):
+        end += 1
+    resverse(str_list, start, end - 1)
+    i = end
+  else:
+    i += 1
+str_list.reverse()
+print(' '.join(str_list))
+```
+16. 现有一个列表 a = [1,3,12,7,3,1,5,8,12,5,21,44]去除其中的重复项
+```python
+a = [1,3,12,7,3,1,5,8,12,5,21,44]
+l = list(set(a))
+print(l)
+```
+17. python中match和search的区别
+18. 如果给你两个等长的列表怎么把他整合为一个字典
+19. python数据的存储方式
+  * 文本文件
+  * json
+  * CSV文件
+  * 数据库
+20. python的一些方法怎么用例如pop()
   * pop()会直接修改原始对象并返回被删除的元素
     * 列表pop()方法使用时不传入索引值默认**删除并返回**列表最后一个数据
     * `del_data = list_name.pop(index)`删除并返回指定索引对应的数据
@@ -230,12 +305,13 @@ class Demo:
   * 字典pop()方法
     * `del_value = dirt_name.pop(key)`**删除并返回**key对应的value
     * 异常：keyError
-* 有用过魔术方法吗怎么使用的：以两个下划线开头和结束的方法，满足某个条件会自动调用
+21. 有用过魔术方法吗怎么使用的：以两个下划线开头和结束的方法，满足某个条件会自动调用
   * `__slots__`
-  * `__init__`
+  * `__init__` 同时也是python的构造方法
     * 在创建对象后会自动调用
     * 初始化对象给对象添加属性
     * 在创建对象时必须传递实参
+22. python构造方法是什么：`__init__`方法
 ```python
 class Cat:
     def __init__(self,name):
@@ -247,39 +323,15 @@ black_cat = Cat('黑宝')
   * `__str__`
     * 自定义打印对象变量的信息可以使用__str__方法、默认情况下会打印对象的内存地址
     * 该方法必须返回一个字符串数据
+23. 简要说明一下你对生成器和迭代器的理解
+    * 迭代器
+    * 生成器
 
-## python实现自动化
-
-* 说说Python怎么做接口自动化？
-```python
-import unittest
-import requests
-
-
-class TestAPI(unittest.TestCase):
-    def setUp(self):
-        self.url = 'http://example.com/api/method'
-        self.headers = {'Content-Type': 'application/json'}
-
-    def test_get_request(self):
-        response = requests.get(self.url, headers=self.headers)
-        self.assertEqual(response.status_code, 200)
-
-    def test_post_request(self):
-        data = {'key1': 'value1', 'key2': 'value2'}
-        response = requests.post(self.url, headers=self.headers, json=data)
-        self.assertEqual(response.status_code, 201)
-
-
-if __name__ == '__main__':
-    unittest.main()
-
-# setup() teardown()有什么区别
-'''
+24. setup() teardown()有什么区别
 setUp：表示前置条件，它在每一个用例执行之前必须会执行一次 
 setUp可以理解为我们需要自动化测试时，需要打开网页窗口，输入对应测试地址，这一些属于前置条件。
 teardown() 表示释放资源，它在每次用例执行完之后会执行一次可以理解为我们测试完毕后，需要关闭浏览器。
-'''
+```python
 import unittest
 class Xseq(unittest.TestCase):
     def setUp(self):
@@ -332,6 +384,34 @@ class Xseqcls(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 ```
+## python实现自动化
+
+1. 说说Python怎么做接口自动化？
+```python
+import unittest
+import requests
+
+
+class TestAPI(unittest.TestCase):
+    def setUp(self):
+        self.url = 'http://example.com/api/method'
+        self.headers = {'Content-Type': 'application/json'}
+
+    def test_get_request(self):
+        response = requests.get(self.url, headers=self.headers)
+        self.assertEqual(response.status_code, 200)
+
+    def test_post_request(self):
+        data = {'key1': 'value1', 'key2': 'value2'}
+        response = requests.post(self.url, headers=self.headers, json=data)
+        self.assertEqual(response.status_code, 201)
+
+if __name__ == '__main__':
+    unittest.main()
+```    
+
+
+
 
 
 
