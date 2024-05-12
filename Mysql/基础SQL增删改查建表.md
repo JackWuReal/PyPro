@@ -40,13 +40,7 @@ SELECT DISTINCT sex from students;
 SELECT DISTINCT age from students;
 
 SELECT age from students;
-
--- 条件查询
-
-
-
 ```
-
 ## 添数据 Insert语句
 ```sql
 -- 逐一添加
@@ -80,6 +74,11 @@ insert into students (id,name) values(0,'小黑'),(0,'小蓝'),(NULL,'大白');
 update students set name='狄仁杰',age=22 WHERE id=5;
 ```
 ## 删除语句 DELETE TRUNCATE DROP 语句
+三种删除数据的方式区别
+1. delete：可以通过where子句删除部分记录
+   * 删除所有数据时,自增长字段不会从1开始
+2. truncate：Truncate删除数据时表结构会保留,自增长字段从1开始.执行效率低于drop
+3. drop: 删除表,效率高
 ```SQL
 -- delete from 表名 where 条件(物理删除)
 
@@ -95,5 +94,7 @@ TRUNCATE table students;
 
 -- drop table 表名(删除数据表，包括数据和表结构)
 drop table students;
+
+drop table if exists students;
 ```
 
