@@ -11,7 +11,7 @@
 * 参数介绍:
   * JS语法形式:**不需要**勾选`Interpret Condition as Variable Expression`
   * 函数形式：需要勾选 `Interpret Condition as Variable Expression`<br>
-![img_17.png](img_17.png)
+![img_17.png](../img_17.png)
 1. IF控制器的作用是什么？
    * 用来控制它下面的测试元素是否运行
 2. 使用“IF控制器”的操作步骤？
@@ -29,7 +29,7 @@
 * 作用:通过设置循环次数，来实现循环发送请求
 * 位置:测试计划 --> 线程组--> (右键添加) 逻辑控制器 --> 循环控制器
 * 参数介绍:<br>
-![img_18.png](img_18.png)<br>
+![img_18.png](../img_18.png)<br>
 1. 循环控制器的作用是什么？
    * 通过设置循环次数，来实现循环发送请求
 2. 使用“循环控制器”的操作步骤？
