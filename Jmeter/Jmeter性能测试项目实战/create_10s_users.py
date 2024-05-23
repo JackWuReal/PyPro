@@ -14,7 +14,7 @@ user_sql = ("INSERT INTO `litemall`.`litemall_user` (`id`, `username`, `password
             "imageView&quality=90&thumbnail=64x64', '', '', "
             "'0', '2020-08-12 14:14:37', '2020-08-14 12:00:58', '0');")
 
-user_start = 100001
+user_start = 100000
 
 try:
     for i in range(100000):
@@ -22,7 +22,7 @@ try:
         username = "test" + str(user_id)
         mobile = "13012" + str(user_id)
 
-        # print(f("插入第{}条数据ID为{}"+user_id))
+        print("插入第{}条数据ID为{}".format("i+1",user_id))
         sql = user_sql.format(user_id,username,mobile)
         cursor.execute(sql)
         conn.commit()
