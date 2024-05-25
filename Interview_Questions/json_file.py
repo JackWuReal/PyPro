@@ -1,6 +1,8 @@
 import json
 
-students = [{"name":"jack","age":"18","sex":"man"},{"name":"mike","age":"20","sex":"man"},{"name":"cheary","age":"18","sex":"woman"}]
+students = [{"name":"jack","age":"18","sex":"man"},
+            {"name":"mike","age":"20","sex":"man"},
+            {"name":"cheary","age":"18","sex":"woman"}]
 
 # # 将python数据类型转换为JSON格式
 # stu_json = json.dumps(students)
