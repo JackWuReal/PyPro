@@ -1,6 +1,4 @@
 # Mysql数据库面试题
-
-
 1. SQL的分类
     * DQL:数据查询语句 select
     * DML：数据操作语句 insert、update、delete
@@ -29,17 +27,17 @@
    * count()：统计总数
 4. 主键、外键、索引的区别
    1. 定义
-    主键：唯一标识一条记录，**不能有重复的，不允许为空**
-    外键：表的外键是另一表的主键, **外键可以有重复的**, 可以**是空值**
-    索引：该字段没有重复值，但可以有一个空值
+      * 主键：唯一标识一条记录，**不能有重复的，不允许为空**
+      * 外键：表的外键是另一表的主键, **外键可以有重复的**, 可以**是空值**
+      * 索引：该字段没有重复值，但可以有一个空值
    2. 作用
-   主键：用来保证**数据完整**性
-   外键：用来和其他表**建立联系**用的
-   索引：提高**查询排序**的速度
+      * 主键：用来保证**数据完整**性
+      * 外键：用来和其他表**建立联系**用的
+      * 索引：提高**查询排序**的速度
    3. 个数
-   主键：只能有一个
-   外键：一个表可以有多个外键
-   索引：一个表可以有多个索引
+      * 主键：只能有一个
+      * 外键：一个表可以有多个外键
+      * 索引：一个表可以有多个索引
 
 7. InnoDB索引和MyISM索引的区别，索引的优缺点
 参考答案:
@@ -64,12 +62,13 @@ innoDB 是聚簇索引，数据挂在逐渐索引之下。
    * 交叉连接：笛卡尔乘积, 显示的结果是连接表数的乘积
 9. 乐观锁和悲观锁的区别
 10. 工作中哪些方面使用到了数据库?如何使用？
-11. 1. 用SQL语句查询出每门课都大于80分的学生姓名。表scores如下：
-```mysql
-select name,min(score) from scores group by name having min(score)>80;
-```
-2. 用sql语句查询两门以上不及格课程的同学的学号以及其平均成绩，并按成绩排序表结构如下：
-```mysql
-select student.id, student.stdentname,AVG(student_score.score) from student,student_score where
-student_id = student_score.id and student_score.score<60 group by student_score.id having count(*)>1;                                                                                            
-```
+11. 
+    1. 用SQL语句查询出每门课都大于80分的学生姓名。表scores如下：
+   ```mysql
+   select name,min(score) from scores group by name having min(score)>80;
+   ```
+   2. 用sql语句查询两门以上不及格课程的同学的学号以及其平均成绩，并按成绩排序表结构如下：
+   ```mysql
+   select student.id, student.stdentname,AVG(student_score.score) from student,student_score where
+   student_id = student_score.id and student_score.score<60 group by student_score.id having count(*)>1;                                                                                            
+   ```
