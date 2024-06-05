@@ -1,4 +1,3 @@
-import pytest
 import yaml
 
 f = open("../config/data.yaml", "r", encoding="utf-8")
