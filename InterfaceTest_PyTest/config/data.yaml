@@ -1,0 +1,22 @@
+hero:
+  name: mark
+  word: 火火火
+  Hp: 40.5
+hero_name:
+  - 安其拉
+  - 黄行
+  - 小乔
+heros:
+  - name: huang
+    word: 周日
+    Hp: 440
+  - name: ma
+    word: cao
+    Hp: 800
+hero_name_list:
+  - - 安其拉
+    - huang
+    - 小乔
+    - 9999
+  - - babbab
+
