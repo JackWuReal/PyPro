@@ -1,6 +1,6 @@
 import pytest
 
-from InterfaceTestPyTest.caculate.add import *
+from InterfaceTest_PyTest.caculate.add import *
 
 def test_add():
     assert add(1,2) == 3

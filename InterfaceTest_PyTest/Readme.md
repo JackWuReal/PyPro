@@ -25,6 +25,14 @@ Pytest -q (静默)
 
 
 ## Pytest断言 跳过及运行
+断言类型：
+```txt
+> == < >= <= != 
+in 
+not in
+is
+is not
+```
 
 ```python
 import pytest
